@@ -1,17 +1,19 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 const {
   getAllUsers,
   getUser,
   register,
   login,
   deleteUser,
-  changePassword,
-} = require('../controllers/users');
+  resetPassword,
+  sendAnEmail,
+} = require('../controllers/users')
 
-router.get('/', getAllUsers);
-router.route('/:id').get(getUser).delete(deleteUser);
-router.post('/register', register);
-router.post('/login', login);
-router.patch('/changePassword', changePassword);
-module.exports = router;
+router.get('/', getAllUsers)
+router.route('/:id').get(getUser).delete(deleteUser)
+router.post('/send-email', sendAnEmail)
+router.post('/register', register)
+router.post('/login', login)
+router.patch('/reset-password', resetPassword)
+module.exports = router

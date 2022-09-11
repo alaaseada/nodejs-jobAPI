@@ -1,8 +1,8 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const { isEmail } = require('validator');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+require('dotenv').config()
+const mongoose = require('mongoose')
+const { isEmail } = require('validator')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -23,29 +23,29 @@ const UserSchema = new mongoose.Schema({
     type: String,
     minlength: 8,
   },
-});
+})
 
 UserSchema.pre('save', async function () {
-  const salt = await bcrypt.genSalt();
-  this.password = await bcrypt.hash(this.password, salt);
-});
+  const salt = await bcrypt.genSalt()
+  this.password = await bcrypt.hash(this.password, salt)
+})
 
 UserSchema.methods.validatePassword = async function (userPassword) {
-  const isValid = await bcrypt.compare(userPassword, this.password);
-  return isValid;
-};
+  const isValid = await bcrypt.compare(userPassword, this.password)
+  return isValid
+}
 
 UserSchema.methods.createJWT = function () {
   const token = jwt.sign(
     { id: this._id, email: this.email },
     process.env.JWT_SECRET_KEY,
-    { expiresIn: '1h' }
-  );
-  return token;
-};
+    { expiresIn: '1h' },
+  )
+  return token
+}
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema)
 
-User.createIndexes();
+User.createIndexes()
 
-module.exports = User;
+module.exports = User

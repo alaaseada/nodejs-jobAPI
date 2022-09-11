@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignIn/Signup</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="logo"><h3 class="title">Jobster</h3></div>
+      <form method="post" id="register-login">
+        <p id="info"></p>
+        <h3 id="title">Login</h3>
+        <div id="name-holder"></div>
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email address"
+        />
+        <label for="password">Password: </label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+        />
+        <a class="form-btn" id="submit-btn" href="#">Login</a>
+        <p class="msg">
+          Not a member yet?
+          <a id="login-signup-a" href="#">Register</a>
+          <p class="msg">Forget your password? 
+            <a href="mail-reset.html" id="reset-password">Reset</a>
+          </p>
+        </p>
+      </form>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>

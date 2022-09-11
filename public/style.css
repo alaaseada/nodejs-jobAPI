@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f4f8;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #102a43;
+}
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.special {
+  color: #3b82f6;
+}
+
+.logo {
+  padding: 20px;
+  position: relative;
+  height: 70px;
+  margin: 20px 0px 50px 0px;
+}
+.title {
+  color: #3b82f6;
+  letter-spacing: 3px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  left: 150px;
+}
+
+.title::before {
+  content: 'J';
+  width: 50px;
+  height: 50px;
+  background-color: #3b82f6;
+  position: absolute;
+  left: -60px;
+  top: -10px;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 50px;
+  font-size: 2rem;
+}
+.container {
+  margin-left: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  max-width: 50%;
+  line-height: 30px;
+}
+.content h1 {
+  margin: 30px 0px;
+  font-size: 3rem;
+}
+.content p {
+  color: #486581;
+  width: 80%;
+}
+.btn {
+  margin: 20px 0px;
+  padding: 10px;
+  display: block;
+  background-color: #3b82f6;
+  color: white;
+  width: 150px;
+  border-radius: 10px;
+  font-size: large;
+  text-align: center;
+}
+.img {
+  background: url('./images/main.svg') center/contain no-repeat;
+  width: 50%;
+  height: 500px;
+}
+
+a:link,
+a:active,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+/* Login page CSS */
+form {
+  margin: 0 auto;
+  width: 50%;
+  height: 300px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 4px 4px 6px gray;
+  height: fit-content;
+}
+
+form h3#title {
+  text-align: center;
+  margin: 20px 0px;
+  position: relative;
+}
+
+h3#title::after {
+  content: '';
+  width: 50%;
+  height: 2px;
+  position: absolute;
+  bottom: -5px;
+  border-bottom: 1px solid #102a43;
+  left: 25%;
+}
+.form-btn {
+  background-color: #3b82f6;
+  color: white;
+  display: block;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+form input,
+form label {
+  display: block;
+  border: none;
+  width: 100%;
+  margin: 20px 0px;
+  padding: 0px 20px;
+}
+
+form input {
+  height: 30px;
+}
+
+form input:focus {
+  outline: none;
+  box-shadow: 2px 2px 6px gray;
+}
+
+p.msg {
+  font-size: small;
+  text-align: center;
+}
+
+.err-msg {
+  background-color: rgb(255, 194, 194);
+}
+
+#info {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.info-msg {
+  background-color: rgb(195, 243, 195);
+}

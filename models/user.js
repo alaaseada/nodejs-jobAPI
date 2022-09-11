@@ -16,6 +16,7 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Email address is required'],
     trim: true,
     unique: true,
+    index: true,
     validate: [isEmail, '{VALUE} is an invalid email address'],
   },
   password: {
@@ -43,4 +44,8 @@ UserSchema.methods.createJWT = function () {
   return token;
 };
 
-module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
+
+User.createIndexes();
+
+module.exports = User;

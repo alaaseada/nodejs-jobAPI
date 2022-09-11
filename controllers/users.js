@@ -47,7 +47,10 @@ const login = async (req, res) => {
   }
   const validPassword = await user.validatePassword(password);
   if (!validPassword) {
-    throw new CustomAPIError(StatusCodes.BAD_REQUEST, `Invalid credentials)`);
+    throw new CustomAPIError(
+      StatusCodes.BAD_REQUEST,
+      `Invalid credentials. please recheck your password.`
+    );
   }
   const token = user.createJWT();
   res.status(StatusCodes.OK).json({ user: { name: user.name }, token });
@@ -55,7 +58,7 @@ const login = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   const { id: _id } = req.params;
-  const user = await User.findOneAndDelete(_id);
+  const user = await User.findOneAndDelete({ _id });
   res
     .status(StatusCodes.OK)
     .json({ user: { name: user.name, email: user.email } });

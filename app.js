@@ -4,14 +4,17 @@ require('express-async-errors');
 const express = require('express');
 const connectDB = require('./db/connect');
 const usersRouter = require('./routes/users');
+const jobsRouter = require('./routes/jobs');
 const notFound = require('./middleware/not-found');
 const errorHandlerMW = require('./middleware/error-handler');
-
+const authenticateUser = require('./middleware/auth');
 const app = express();
 
 app.use(express.static('./public'));
 app.use(express.json());
 app.use('/api/v1/users', usersRouter);
+app.use(authenticateUser);
+app.use('/api/v1/jobs', jobsRouter);
 app.use(errorHandlerMW);
 app.use(notFound);
 

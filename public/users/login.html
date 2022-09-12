@@ -5,11 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SignIn/Signup</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <div class="wrapper">
-      <div class="logo"><h3 class="title">Jobster</h3></div>
+      <div class="menu">
+        <div class="logo"><h3 class="title">Jobster</h3></div>
+        <div class="user-board hidden">
+          <span class="welcome"></span>
+          <a href="#" class="btn" id="login-logout-btn">Logout</a>
+        </div>
+      </div>
       <form method="post" id="register-login">
         <p id="info"></p>
         <h3 id="title">Login</h3>
@@ -32,9 +38,10 @@
         <p class="msg">
           Not a member yet?
           <a id="login-signup-a" href="#">Register</a>
-          <p class="msg">Forget your password? 
-            <a href="mail-reset.html" id="reset-password">Reset</a>
-          </p>
+        </p>
+        <p class="msg">
+          Forget your password?
+          <a href="mail-reset.html" id="reset-password"> Reset </a>
         </p>
       </form>
     </div>
@@ -45,6 +52,7 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <script src="main.js"></script>
+    <script src="../js/user.js"></script>
+    <script src="../js/welcome-logout.js"></script>
   </body>
 </html>

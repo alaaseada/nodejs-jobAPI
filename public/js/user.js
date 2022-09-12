@@ -52,24 +52,25 @@ submit_btn.addEventListener('click', async (e) => {
         email: email.value,
         password: password.value,
       };
-      console.log(userObj);
     }
     const {
       data: { user, token },
     } = await axios.post(url, userObj);
-    info.textContent = `Welcome, ${user.name}!`;
-    info.className = 'info-msg';
-    setTimeout(clearFields, 3000);
     localStorage.setItem('token', token);
+    localStorage.setItem('username', user.name);
+    window.location.href = '/jobs/dashboard.html';
   } catch (err) {
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
+
     if (err.response) {
-      console.log(err.response.data);
       info.textContent = `Error: ${err.response.data.msg}`;
       info.className = 'err-msg';
     } else {
       console.log(err);
     }
+    user_board.classList.remove('visible');
+    user_board.classList.add('hidden');
     setTimeout(clearFields, 3000);
   }
 });

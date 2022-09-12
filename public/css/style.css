@@ -18,10 +18,15 @@ body {
 }
 
 .logo {
-  padding: 20px;
   position: relative;
+}
+
+.logo,
+.user-board {
+  padding: 20px;
   height: 70px;
   margin: 20px 0px 50px 0px;
+  width: 50%;
 }
 .title {
   color: #3b82f6;
@@ -45,6 +50,26 @@ body {
   border-radius: 10px;
   line-height: 50px;
   font-size: 2rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+.user-board {
+  width: 50%;
+  text-align: right;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+.user-board a {
+  display: inline;
 }
 .container {
   margin-left: 80px;
@@ -76,7 +101,7 @@ body {
   text-align: center;
 }
 .img {
-  background: url('./images/main.svg') center/contain no-repeat;
+  background: url('../images/main.svg') center/contain no-repeat;
   width: 50%;
   height: 500px;
 }
@@ -105,15 +130,6 @@ form h3#title {
   position: relative;
 }
 
-h3#title::after {
-  content: '';
-  width: 50%;
-  height: 2px;
-  position: absolute;
-  bottom: -5px;
-  border-bottom: 1px solid #102a43;
-  left: 25%;
-}
 .form-btn {
   background-color: #3b82f6;
   color: white;
@@ -150,11 +166,29 @@ p.msg {
   background-color: rgb(255, 194, 194);
 }
 
-#info {
+#info,
+.info {
   padding: 10px 20px;
   text-align: center;
 }
 
 .info-msg {
   background-color: rgb(195, 243, 195);
+}
+
+.job-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0px;
+  text-align: center;
+  justify-content: center;
+}
+
+.job-card {
+  width: 25%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 4px 4px 6px gray;
+  height: fit-content;
 }

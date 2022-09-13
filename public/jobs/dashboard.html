@@ -16,27 +16,29 @@
           <a href="#" class="btn" id="login-logout-btn">Logout</a>
         </div>
       </div>
-      <div class="page-msg"></div>
-      <form method="post">
-        <p id="info"></p>
-        <h3 id="title">New Job</h3>
-        <label for="company">Company: </label>
-        <input
-          type="text"
-          name="company"
-          id="company"
-          placeholder="Company name"
-        />
-        <label for="position">Position: </label>
-        <input
-          type="text"
-          name="position"
-          id="position"
-          placeholder="Position"
-        />
-        <a class="form-btn" id="submit-btn" href="#">Add</a>
-      </form>
-      <div class="job-list"></div>
+      <div id="page-msg" class="hidden"></div>
+      <div id="page-content">
+        <form method="post">
+          <p id="info"></p>
+          <h3 id="title">New Job</h3>
+          <label for="company">Company: </label>
+          <input
+            type="text"
+            name="company"
+            id="company"
+            placeholder="Company name"
+          />
+          <label for="position">Position: </label>
+          <input
+            type="text"
+            name="position"
+            id="position"
+            placeholder="Position"
+          />
+          <a class="form-btn" id="add-btn" href="#">Add</a>
+        </form>
+        <div class="job-list"></div>
+      </div>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"

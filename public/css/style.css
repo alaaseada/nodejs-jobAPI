@@ -114,7 +114,8 @@ a:visited {
 }
 
 /* Login page CSS */
-form {
+form,
+#page-msg {
   margin: 0 auto;
   width: 50%;
   height: 300px;
@@ -164,6 +165,17 @@ p.msg {
 
 .err-msg {
   background-color: rgb(255, 194, 194);
+}
+
+#page-msg {
+  height: 300px;
+  font-size: larger;
+  line-height: 250px;
+}
+#page-msg > a:link,
+#page-msg > a.active,
+#page-msg > a:visited {
+  color: #3b82f6;
 }
 
 #info,

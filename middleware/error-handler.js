@@ -3,7 +3,6 @@ const { StatusCodes } = require('http-status-codes');
 
 const errorHandlerMW = async (err, req, res, next) => {
   if (err instanceof CustomAPIError) {
-    console.log('I am here');
     return res.status(err.statusCode).json({ msg: err.message });
   }
   if (err['code'] === 11000) {

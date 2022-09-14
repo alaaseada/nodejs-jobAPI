@@ -171,6 +171,7 @@ p.msg {
   height: 300px;
   font-size: larger;
   line-height: 250px;
+  text-align: center;
 }
 #page-msg > a:link,
 #page-msg > a.active,
@@ -189,18 +190,82 @@ p.msg {
 }
 
 .job-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   margin: 50px 0px;
-  text-align: center;
   justify-content: center;
 }
 
 .job-card {
-  width: 23%;
-  margin: 0 auto;
+  margin: 10px;
   padding: 20px;
   background-color: white;
   box-shadow: 4px 4px 6px gray;
-  height: fit-content;
+  position: relative;
+}
+
+.date {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  padding: 5px;
+  background-color: #3b82f6;
+  font-size: small;
+  color: white;
+}
+
+.position {
+  margin: 20px 0px 2px;
+}
+.company {
+  font-size: smaller;
+  background-color: lightgray;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 2px 0px 20px;
+}
+
+.status {
+  position: absolute;
+  right: 20px;
+  color: #3b82f6;
+  bottom: 20px;
+  font-size: smaller;
+}
+
+.job-card > a:link,
+.job-card > a:active,
+.job-card > a:hover,
+.job-card > a:visited {
+  text-decoration: none;
+  font-size: smaller;
+}
+
+.del-btn {
+  color: rgb(151, 44, 44);
+}
+
+.edit-btn {
+  color: rgb(13, 59, 13);
+}
+
+.dashboard-btn {
+  width: fit-content;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.status-select {
+  display: block;
+  border: none;
+  width: 50%;
+  margin: 20px 0px;
+  padding: 0px 20px;
+  height: 30px;
+}
+
+option:hover {
+  background-color: #3b82f6 !important;
+  color: white !important;
 }

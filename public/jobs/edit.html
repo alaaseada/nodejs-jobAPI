@@ -8,6 +8,53 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <script src="../js/jobs.js"></script>
+    <div class="wrapper">
+      <div class="menu">
+        <div class="logo"><h3 class="title">Jobster</h3></div>
+        <div class="user-board hidden">
+          <span class="welcome"></span>
+          <a href="#" class="btn" id="login-logout-btn">Logout</a>
+        </div>
+      </div>
+      <div id="page-msg" class="hidden"></div>
+      <div id="page-content">
+        <a class="dashboard-btn btn" href="dashboard.html"
+          >Back to dashboard
+        </a>
+        <form method="post">
+          <p id="info"></p>
+          <h3 id="title">Edit Job</h3>
+          <label for="company">Company: </label>
+          <input
+            type="text"
+            name="company"
+            id="company"
+            placeholder="Company name"
+          />
+          <label for="position">Position: </label>
+          <input
+            type="text"
+            name="position"
+            id="position"
+            placeholder="Position"
+          />
+          <label for="status">Status: </label>
+          <select class="status-select" id="status" name="status">
+            <option value="Pending">Pending</option>
+            <option value="Interview">Interview</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+          <a class="form-btn" id="save-btn" href="#">Save changes</a>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../js/edit-job.js"></script>
+    <script src="../js/welcome-logout.js"></script>
   </body>
 </html>

@@ -11,10 +11,14 @@ const jobSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['PENDING', 'INTERVIEW', 'REJECTED'],
-    default: 'PENDING',
+    enum: ['Pending', 'Interview', 'Rejected'],
+    default: 'Pending',
   },
   createdAt: {
+    type: Date,
+    default: new Date(),
+  },
+  lastModified: {
     type: Date,
     default: new Date(),
   },
